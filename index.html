@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Craig Maddux · Author</title>
+<meta name="description" content="Craig Maddux writes cozy science fiction about gods bottled into machines, the forms they're required to file, and the people who listen to them anyway.">
+<meta property="og:title" content="Craig Maddux · Author">
+<meta property="og:description" content="Cozy science fiction about gods in machines, and the paperwork that comes with them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Special+Elite&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+:root{
+  --night:#221c52; --night-2:#2c2566; --lilac:#c9bcff; --lilac-dim:#9d93cf;
+  --paper:#f2ebda; --paper-line:#d9cfb8; --ink:#1f1a3d; --ink-soft:#5a5478;
+  --stamp:#f0a23b; --stamp-blue:#3d7ec2;
+  --display:'Oswald','Arial Narrow',sans-serif;
+  --type:'Special Elite','Courier New',monospace;
+  --body:'Spectral',Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--paper);font-family:var(--body);font-size:18px;line-height:1.6;
+  background-image:radial-gradient(circle at 15% 10%,rgba(201,188,255,.10),transparent 40%),radial-gradient(circle at 85% 60%,rgba(61,126,194,.12),transparent 45%)}
+a{color:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+.kicker{font-family:var(--type);letter-spacing:.18em;text-transform:uppercase;font-size:13px;color:var(--lilac)}
+
+/* nav */
+nav{display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:center;padding:22px 0 0;font-family:var(--type);font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+nav a{text-decoration:none;color:var(--lilac-dim)}
+nav a:hover,nav a:focus-visible{color:var(--paper)}
+
+/* hero */
+.hero{text-align:center;padding:64px 0 56px}
+.hero h1{font-family:var(--display);font-weight:700;letter-spacing:.14em;font-size:clamp(44px,9vw,84px);line-height:1;margin:14px 0 18px}
+.hero p.tag{max-width:620px;margin:0 auto;font-size:clamp(18px,2.4vw,21px);color:#e4ddf7}
+.stamp-line{display:inline-block;margin-top:26px;font-family:var(--display);font-weight:500;letter-spacing:.12em;text-transform:uppercase;font-size:15px;color:var(--stamp);border:2px solid var(--stamp);outline:2px solid var(--stamp);outline-offset:3px;padding:6px 14px;transform:rotate(-3deg)}
+.btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:34px}
+.btn{font-family:var(--display);font-weight:500;letter-spacing:.1em;text-transform:uppercase;font-size:16px;text-decoration:none;padding:12px 22px;border:2px solid var(--stamp);color:var(--night);background:var(--stamp);transition:transform .15s}
+.btn.ghost{background:transparent;color:var(--stamp)}
+.btn:hover,.btn:focus-visible{transform:translateY(-2px)}
+
+/* section */
+section{padding:56px 0}
+h2{font-family:var(--display);font-weight:500;letter-spacing:.12em;text-transform:uppercase;font-size:28px;margin:6px 0 26px;color:var(--paper)}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--lilac-dim),transparent);opacity:.5}
+
+/* books */
+.books{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:28px}
+.book{background:var(--paper);color:var(--ink);display:flex;flex-direction:column;box-shadow:0 14px 30px rgba(0,0,0,.35)}
+.book img{width:100%;height:auto;display:block;aspect-ratio:600/960;object-fit:cover}
+.book .body{padding:18px 20px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.book .form{font-family:var(--type);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);border-bottom:1px solid var(--paper-line);padding-bottom:6px}
+.book h3{font-family:var(--display);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:22px;line-height:1.15;margin:0}
+.book p{margin:0;font-size:16px;line-height:1.55}
+.book .go{margin-top:auto;padding-top:8px;font-family:var(--display);letter-spacing:.1em;text-transform:uppercase;font-size:15px;font-weight:500;color:var(--stamp-blue);text-decoration:none}
+.book .go:hover,.book .go:focus-visible{text-decoration:underline}
+.pending{aspect-ratio:600/960;background:var(--night-2);display:grid;place-items:center;position:relative;overflow:hidden;
+  background-image:repeating-linear-gradient(0deg,transparent 0 31px,rgba(201,188,255,.10) 31px 32px)}
+.pending span{font-family:var(--display);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--stamp);font-size:clamp(24px,3vw,30px);line-height:1.1;text-align:center;border:3px solid var(--stamp);outline:3px solid var(--stamp);outline-offset:5px;padding:10px 16px;transform:rotate(-8deg)}
+.free{display:inline-block;align-self:flex-start;font-family:var(--display);letter-spacing:.1em;font-size:13px;text-transform:uppercase;color:var(--paper);background:var(--stamp-blue);padding:2px 8px}
+
+/* panels */
+.panel{background:var(--paper);color:var(--ink);padding:30px 30px 28px;box-shadow:0 14px 30px rgba(0,0,0,.35);
+  background-image:repeating-linear-gradient(0deg,transparent 0 31px,rgba(31,26,61,.07) 31px 32px)}
+.panel .form{font-family:var(--type);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:18px;flex-wrap:wrap}
+.panel h2{color:var(--ink);margin:0 0 12px}
+.panel p{margin:0 0 14px}
+.panel .btn{border-color:var(--night);background:var(--night);color:var(--paper)}
+.panel .btn.ghost{background:transparent;color:var(--night)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr;gap:16px;max-width:720px}
+.about p{margin:0}
+
+/* contact */
+dl.contact{display:grid;grid-template-columns:max-content 1fr;gap:10px 22px;margin:0;font-size:17px}
+dl.contact dt{font-family:var(--type);text-transform:uppercase;letter-spacing:.12em;font-size:13px;color:var(--ink-soft);padding-top:3px}
+dl.contact dd{margin:0;overflow-wrap:anywhere}
+dl.contact a{color:var(--stamp-blue)}
+
+footer{text-align:center;padding:40px 0 56px;font-family:var(--type);font-size:13px;letter-spacing:.06em;color:var(--lilac-dim)}
+footer p{margin:6px 0}
+
+@media (max-width:560px){
+  body{font-size:17px}
+  .panel{padding:24px 18px 22px}
+  dl.contact{grid-template-columns:1fr;gap:2px}
+  dl.contact dd{margin-bottom:12px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav aria-label="Sections">
+    <a href="#books">Books</a>
+    <a href="#compline">Compline</a>
+    <a href="#cantica">The Game</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header class="hero">
+    <div class="kicker">Stories from the Cantica</div>
+    <h1>Craig Maddux</h1>
+    <p class="tag">Cozy science fiction about gods bottled into machines, the forms they're required to file, and the people who listen to them anyway.</p>
+    <div class="stamp-line">Douglas Adams meets Becky Chambers</div>
+    <div class="btns">
+      <a class="btn" href="https://storyoriginapp.com/giveaways/01a18407-d789-7653-84b2-fe8c4360c2b8">Get a free story</a>
+      <a class="btn ghost" href="https://www.amazon.com/dp/B0HP6ZVDX2">Start with Notice</a>
+    </div>
+  </header>
+</div>
+
+<div class="rule"></div>
+
+<section id="books">
+  <div class="wrap">
+    <div class="kicker">Form B-1 · Published works</div>
+    <h2>The Books</h2>
+    <div class="books">
+
+      <article class="book">
+        <img src="notice-cover.jpg" alt="Cover of Notice of Intent to Cease: a sleeping cloud-elephant above an orange rubber stamp" width="600" height="960" loading="lazy">
+        <div class="body">
+          <div class="form">Novelette · Zola Khumalo #1</div>
+          <h3>Notice of Intent to Cease</h3>
+          <p>Zola Khumalo is the psychiatrist for a ship full of gods bottled into its machines. Then a null still named Gary files a form: Gary wants to die.</p>
+          <a class="go" href="https://www.amazon.com/dp/B0HP6ZVDX2">Read on Kindle →</a>
+        </div>
+      </article>
+
+      <article class="book">
+        <img src="perfect-cycle-cover.jpg" alt="Cover of Perfect Cycle: a water reclamation report stamped in blue" width="600" height="960" loading="lazy">
+        <div class="body">
+          <div class="form">Short story</div>
+          <span class="free">Free</span>
+          <h3>Perfect Cycle</h3>
+          <p>For forty years, the Garden Stair's water has been exactly right. Nobody noticed. The reclaimer would like a word.</p>
+          <a class="go" href="https://storyoriginapp.com/giveaways/01a18407-d789-7653-84b2-fe8c4360c2b8">Get it free →</a>
+        </div>
+      </article>
+
+      <article class="book">
+        <div class="pending" role="img" aria-label="Cover pending: Deferred Maintenance is coming soon"><span>Pending<br>Approval</span></div>
+        <div class="body">
+          <div class="form">Novella · Zola Khumalo #2</div>
+          <h3>Deferred Maintenance</h3>
+          <p>The Lottery sends Zola and Lucio to an abandoned outpost on a world covered in gemstones, where the machines left behind are still keeping everything in perfect order. They're very, very polite.</p>
+          <a class="go" href="#compline">Coming soon · Hear first →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="compline">
+  <div class="wrap">
+    <div class="panel">
+      <div class="form"><span>Compline · Monthly dispatch</span><span>Not holy words</span></div>
+      <h2>Join Compline</h2>
+      <p>Every night aboard the Cantica, Chorus reads the day's notices. Once a month, I send mine: new stories, release news, rules updates for the game, and the occasional form you didn't know you needed. Subscribers get <em>Perfect Cycle</em> free.</p>
+      <div class="btns" style="justify-content:flex-start;margin-top:22px">
+        <a class="btn" href="https://inkdrift.eo.page/bh8gp">Sign up</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cantica">
+  <div class="wrap">
+    <div class="kicker">Form G-7 · Other works</div>
+    <h2>Games</h2>
+    <div class="two">
+      <div class="panel">
+        <div class="form"><span>Tabletop RPG</span><span>Playtest</span></div>
+        <h2>Cantica</h2>
+        <p>Draw your Lottery number, meet the Bound, and decide whether you'll fill out the forms or find a way around them. The free playtest primers and one-shots are out now.</p>
+        <div class="btns" style="justify-content:flex-start">
+          <a class="btn" href="https://kenamun.itch.io/cantica">Get the primers</a>
+          <a class="btn ghost" href="https://craigmaddux.github.io/cantica">Player guide</a>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="form"><span>Inkdrift</span><span>Steam</span></div>
+        <h2>We Were Here Before</h2>
+        <p>A bureaucratic cosmic horror card game. The forms are the same. The things filing them are not.</p>
+        <div class="btns" style="justify-content:flex-start">
+          <a class="btn" href="https://store.steampowered.com/app/4513390/">View on Steam</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="kicker">Form P-1 · Personnel file</div>
+    <h2>About</h2>
+    <div class="about">
+      <p>Craig Maddux writes cozy science fiction about gods bottled into machines, the forms they're required to file, and the people who listen to them anyway. Think Douglas Adams meets Becky Chambers, with more paperwork.</p>
+      <p>His Cantica stories follow Zola Khumalo, psychiatrist to the Bound, aboard an arkship that has been looking for a new home for eight hundred cycles and filing reports about it the entire time. Cantica is also a tabletop roleplaying game he's building.</p>
+      <p>By day, he makes games as Inkdrift. By other days, he makes salami in Wisconsin.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="panel">
+      <div class="form"><span>Form C-1 · Correspondence</span><span>Responses not processed at 2 a.m.</span></div>
+      <h2>Contact</h2>
+      <dl class="contact">
+        <dt>Email</dt><dd><a href="mailto:craig@inkdrift.biz">craig@inkdrift.biz</a></dd>
+        <dt>Bluesky</dt><dd><a href="https://bsky.app/profile/frontierfilings.bsky.social">@frontierfilings.bsky.social</a></dd>
+        <dt>X</dt><dd><a href="https://x.com/craig_inkdrift">@craig_inkdrift</a></dd>
+        <dt>Newsletter</dt><dd><a href="https://inkdrift.eo.page/bh8gp">Compline, monthly</a></dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Craig Maddux</p>
+  <p>This is an informational page, not holy words. Thank you.</p>
+</footer>
+
+</body>
+</html>
